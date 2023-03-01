@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.anselm.books.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/toSearchFragment"
+            app:destination="@id/nav_search"
+            app:enterAnim="@animator/slide_in_right"
+            app:exitAnim="@animator/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/toEditFragment"
+            app:destination="@id/nav_edit" />
+        <action
+            android:id="@+id/toPagerFragment"
+            app:destination="@id/nav_pager" />
+        <action
+            android:id="@+id/toScanFragment"
+            app:destination="@id/nav_scan" />
+        <action android:id="@+id/toEditMultiDialogFragment"
+            app:destination="@id/nav_edit_multi" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.anselm.books.ui.home.SearchFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_list">
+
+        <argument android:name="query"
+            app:argType="com.anselm.books.database.Query"
+            app:nullable="true" android:defaultValue="@null" />
+
+        <action
+            android:id="@+id/toPagerFragment"
+            app:destination="@id/nav_pager" />
+        <action
+            android:id="@+id/toSearchDialogFragment"
+            app:destination="@id/search_dialog_fragment" />
+        <action
+            android:id="@+id/toEditFragment"
+            app:destination="@id/nav_edit" />
+        <action android:id="@+id/toEditMultiDialogFragment"
+            app:destination="@id/nav_edit_multi" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/search_dialog_fragment"
+        android:name="com.anselm.books.ui.home.SearchDialogFragment" >
+
+        <argument android:name="type"
+            app:argType="com.anselm.books.database.Label$Type" />
+        <argument android:name="query" app:argType="com.anselm.books.database.Query"
+            app:nullable="true" android:defaultValue="@null" />
+    </dialog>
+
+
+    <fragment
+        android:id="@+id/nav_cleanup"
+        android:name="com.anselm.books.ui.cleanup.CleanUpFragment"
+        android:label="@string/menu_cleanup"
+        tools:layout="@layout/fragment_cleanup">
+
+        <action android:id="@+id/toPagerFragment"
+            app:destination="@id/nav_pager" />
+
+        <action android:id="@+id/toSearchFragment"
+            app:destination="@id/nav_search" />
+
+        <action
+            android:id="@+id/toCleanupLabelFragment"
+            app:destination="@id/nav_cleanup_label" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_cleanup_label"
+        android:name="com.anselm.books.ui.cleanup.CleanUpLabelFragment"
+        tools:layout="@layout/fragment_cleanup_label" >
+
+        <argument android:name="type"
+            app:argType="com.anselm.books.database.Label$Type" />
+
+        <action android:id="@id/toSearchFragment"
+            app:destination="@id/nav_search" />
+    </fragment>
+
+    <fragment
+        android:id="@id/nav_settings"
+        android:name="com.anselm.books.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_details"
+        android:name="com.anselm.books.ui.details.DetailsFragment"
+        tools:layout="@layout/fragment_details" >
+
+        <argument android:name="bookId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <argument android:name="book"
+            app:argType="com.anselm.books.database.Book"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument android:name="displayTitle"
+            app:argType="boolean"
+            android:defaultValue="true" />
+
+        <action android:id="@+id/toEditFragment"
+            app:destination="@id/nav_edit" />
+        <action android:id="@+id/toSearchFragment"
+            app:destination="@id/nav_search" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_edit"
+        android:name="com.anselm.books.ui.edit.EditFragment"
+        android:label="@string/book_edit"
+        tools:layout="@layout/fragment_edit">
+
+        <argument android:name="bookId"
+            app:argType="long"
+            android:defaultValue="-1L"/>
+        <argument android:name="book"
+            app:argType="com.anselm.books.database.Book"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_edit_multi"
+        android:name="com.anselm.books.ui.edit.EditMultiDialogFragment"
+        android:label="Edit multiples"
+        tools:layout="@layout/bottom_sheet_multi_edit_dialog" >
+
+        <argument android:name="bookIds" app:argType="long[]" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pager"
+        android:name="com.anselm.books.ui.pager.PagerFragment"
+        tools:layout="@layout/fragment_pager" >
+
+        <argument android:name="query"
+            app:argType="com.anselm.books.database.Query" />
+        <argument android:name="position" app:argType="integer" android:defaultValue="0"/>
+
+        <action android:id="@+id/toEditFragment"
+            app:destination="@id/nav_edit" />
+        <action android:id="@+id/toSearchFragment"
+            app:destination="@id/nav_search" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_scan"
+        android:name="com.anselm.books.ui.scan.ScanFragment"
+        tools:layout="@layout/fragment_scan" >
+
+        <action android:id="@+id/toDetailsFragment"
+            app:destination="@id/nav_details" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sync"
+        android:name="com.anselm.books.ui.sync.SyncFragment"
+        tools:layout="@layout/fragment_sync" >
+    </fragment>
+
+</navigation>

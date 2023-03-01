@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layoutDirection="ltr"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/idHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/idCancelDialog"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/idCancelDialog"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_baseline_cancel_48"
+            android:contentDescription="@string/cancel"
+            android:layout_margin="8dp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintStart_toEndOf="@id/idHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/idHeader"
+            app:backgroundTint="#aaaaaa" />
+
+        <LinearLayout
+            android:id="@+id/idEditorContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layoutDirection="ltr"
+
+            android:clipToPadding="false"
+            android:clipChildren="false"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idHeader"
+            app:layout_constraintBottom_toTopOf="@id/idApplyButton" >
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/idApplyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius = "15dp"
+            android:text="@string/apply"
+            android:textAllCaps="false"
+            android:layout_margin="15dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idEditorContainer"
+            app:layout_constraintBottom_toBottomOf="@id/idApplyButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

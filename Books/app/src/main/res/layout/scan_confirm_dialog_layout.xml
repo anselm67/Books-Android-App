@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layoutDirection="ltr">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="ltr">
+        <TextView
+            android:id="@+id/idTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_weight="1"
+            android:layout_gravity="start|center_vertical" />
+
+        <ImageButton
+            android:id="@+id/idCancelDialog"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_baseline_cancel_48"
+            android:contentDescription="@string/cancel"
+            android:layout_margin="8dp"
+            app:backgroundTint="#aaaaaa"
+            android:layout_gravity="end|center_vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/idNoMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="ltr" >
+
+        <TextView
+            android:id="@+id/idNoMatchCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:textSize="20sp"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/idNoMatchText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="@string/scan_confirm_no_match" />
+
+        <Button
+            android:id="@+id/idDeleteNoMatchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius = "15dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_margin="10dp"
+            android:text="@string/clear" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/idDuplicate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="ltr" >
+
+        <TextView
+            android:id="@+id/idDuplicateCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:textSize="20sp"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/idDuplicateText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="@string/scan_confirm_duplicates"/>
+
+        <Button
+            android:id="@+id/idDeleteDuplicateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius = "15dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_margin="10dp"
+            android:text="@string/clear" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/idError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="ltr"
+        android:paddingBottom="30dp">
+
+        <TextView
+            android:id="@+id/idErrorCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:textSize="20sp"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/idErrorText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="@string/scan_confirm_error"/>
+
+
+        <Button
+            android:id="@+id/idDeleteErrorButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cornerRadius = "15dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_margin="10dp"
+            android:text="@string/clear" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/idProceedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cornerRadius = "15dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp" />
+
+</LinearLayout>

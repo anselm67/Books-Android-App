@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/idSortByDateAdded"
+        android:icon="@drawable/ic_baseline_sort_by_time_24"
+        android:title="@string/sort_by_date_added"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/idSortByTitle"
+        android:icon="@drawable/ic_baseline_sort_by_alpha_24"
+        android:title="@string/sort_by_title"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/idGotoSearchView"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/search_title"
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/idDeleteBook"
+        android:icon="@drawable/ic_baseline_delete_24"
+        android:iconTint="@color/white"
+        android:title="@string/delete_book"
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/idSelectAll"
+        android:icon="@drawable/ic_baseline_check_24"
+        android:iconTint="@color/white"
+        android:title="@string/cancel"
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/idCancelView"
+        android:icon="@drawable/ic_baseline_cancel_48"
+        android:iconTint="@color/white"
+        android:title="@string/cancel"
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/idSearchView"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/search_title"
+        app:showAsAction="collapseActionView"
+        app:actionViewClass="android.widget.SearchView" />
+
+</menu>

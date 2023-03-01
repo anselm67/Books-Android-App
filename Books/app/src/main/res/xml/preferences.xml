@@ -1,0 +1,113 @@
+<!--
+  ~ Copyright 2018 The app Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Import / Export">
+
+        <Preference
+            app:key="import_preference"
+            app:title="@string/import_preference_title" />
+
+        <Preference
+            app:key="export_preference"
+            app:title="@string/export_preference_title" />
+
+        <Preference
+            app:key="reset_preference"
+            app:title="@string/reset_preference_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="preferences_import_options"
+        app:title="@string/import_preferences_header">
+
+        <CheckBoxPreference
+            app:key="lookup_use_last_location"
+            android:title="@string/lookup_use_last_location_prompt" />
+
+        <EditTextPreference
+            app:key="lookup_use_last_location_value" android:defaultValue="" />
+
+        <CheckBoxPreference
+            app:key="lookup_use_only_existing_genres"
+            android:defaultValue="false"
+            android:title="@string/lookup_use_only_existing_genres_prompt" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory app:key="lookup_service_preferences"
+        app:title="@string/preference_category_lookup_service">
+
+        <CheckBoxPreference app:key="use_google"
+            android:title="Google Books"
+            android:defaultValue="true" />
+        <CheckBoxPreference app:key="use_bnf"
+            android:title="Bibliothèque Nationale de France"
+            android:defaultValue="true" />
+        <CheckBoxPreference app:key="use_worldcat"
+            android:title="Worldcat"
+            android:defaultValue="true" />
+        <CheckBoxPreference app:key="use_itunes"
+            android:title="iTunes"
+            android:defaultValue="true" />
+        <CheckBoxPreference app:key="use_amazon"
+            android:title="Amazon"
+            android:defaultValue="true" />
+        <CheckBoxPreference app:key="use_open_library"
+            android:title="Open Library"
+            android:defaultValue="true" />
+
+        <Preference app:key="lookup_service_reset_stats"
+            android:title="Reset lookup statistics." />
+
+        <EditTextPreference app:key="oclc_wskey"
+            android:title="Worldcat / OCLC wskey"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/preference_category_display">
+
+        <DropDownPreference
+            app:key="sort_order"
+            android:defaultValue="LastAdded"
+            android:entries="@array/sortOrderNames"
+            android:entryValues="@array/sortOrderIdentifiers"
+            android:title="@string/sort_order_preference_prompt"
+            app:useSimpleSummaryProvider="true"/>
+
+        <CheckBoxPreference
+            app:key="enable_shortcut_to_edit"
+            app:title="@string/preference_enable_shortcut_to_edit"
+            android:defaultValue="true"/>
+
+        <CheckBoxPreference
+            app:key="display_book_id"
+            app:title="@string/preference_display_book_id"
+            android:defaultValue="false"/>
+
+        <CheckBoxPreference
+            app:key="display_last_modified"
+            app:title="@string/preference_display_last_modified"
+            android:defaultValue="false"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

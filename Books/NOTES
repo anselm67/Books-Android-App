@@ -1,0 +1,71 @@
+
+
+BNF metadata
+https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.isbn%20adj%20%229782072987885%22&recordSchema=unimarcXchange&maximumRecords=100&startRecord=1
+query=bib.isbn adj "\"<isbn>\""
+And cover
+https://catalogue.bnf.fr/couverture?&appName=NE&idArk=ark:/12148/cb47110186n&couverture=1
+
+9782757206492 - BNF Match without cover
+9782702183618
+
+
+Backup
+https://developer.android.com/guide/topics/data/testingbackup
+https://developer.android.com/guide/topics/data/autobackup#IncludingFiles
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/idEditLabel"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        app:icon="@drawable/ic_baseline_mode_edit_24"
+        app:iconTint="#6200EE"
+        android:layout_gravity="center_vertical"
+        app:iconGravity="textTop"
+        style="?android:attr/buttonBarButtonStyle"
+
+        />
+
+
+
+
+BookBuddy - which you can look at via a proxy uses the following URLs to lookup ISBN:
+http://www.worldcat.org/webservices/catalog/content/isbn/9782957002610?wskey=IweooVYBpshJw9ZsF1Hj7IRFCsO3V5eQ5oK6UfJJHWLCA1xr9As0BESKHkAS15WOsS4oi8DQxFAMRGN4&maximumRecords=1&recordSchema=info:srw/schema/1/dc
+http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn%3D9782957002610&maximumRecords=1&recordSchema=mods
+http://images.amazon.com/images/P/2957002612.01.THUMB.jpg
+
+Sorting data sources and switching accordingly:
+https://stackoverflow.com/questions/65643600/android-paging-3-library-how-to-change-list-with-new-param
+
+Google Book API:
+https://www.googleapis.com/books/v1/volumes?q=isbn:9782072442193
+
+Debugging SQLListe statements:
+- Turn it on:
+Android/Sdk$ ./platform-tools/adb shell setprop log.tag.SQLiteStatements VERBOSE
+Android/Sdk$ ./platform-tools/adb shell stop
+Android/Sdk$ ./platform-tools/adb shell start
+- Turn it off:
+Android/Sdk$ ./platform-tools/adb shell setprop log.tag.SQLiteStatements \"\"
+Android/Sdk$ ./platform-tools/adb shell stop
+Android/Sdk$ ./platform-tools/adb shell start
+
+
+A bookbuddy clone for Android.
+
+Based on the Android room codelab
+https://developer.android.com/codelabs/android-room-with-a-view
+
+And the Pagination 3 API per this blog post:
+https://genicsblog.com/gouravkhunger/pagination-in-android-room-database-using-the-paging-3-library
+
+Full text search
+https://www.kodeco.com/14292824-full-text-search-in-room-tutorial-getting-started
+
+Accessing Google Drive from Android App
+https://medium.com/android-dev-hacks/integrating-google-drive-api-in-android-applications-18024f42391c
+https://developers.google.com/identity/sign-in/android/start-integrating
+https://stackoverflow.com/questions/41675630/android-app-drive-api-with-full-drive-access-whats-the-procedure
+
+

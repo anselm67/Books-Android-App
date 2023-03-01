@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layoutDirection="ltr"
+    android:paddingStart="5dp"
+    android:paddingEnd="5dp"
+    android:paddingTop="10dp"
+    android:clipToPadding="false"
+    android:clipChildren="false" >
+
+    <ImageView
+        android:id="@+id/idCoverImage"
+        android:layout_width="140dp"
+        android:layout_height="210dp"
+        android:contentDescription="@string/book_image_description"
+
+        android:src="@mipmap/ic_book_cover"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:background="@drawable/textview_border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/idCameraPickerButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/idCameraPickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cornerRadius = "15dp"
+        android:drawableTop="@drawable/ic_outline_camera_alt_24"
+        android:drawableTint="#6200EE"
+        android:text="@string/take_photo"
+        android:textAllCaps="false"
+        style="?android:attr/buttonBarButtonStyle"
+
+        app:layout_constraintStart_toEndOf="@id/idCoverImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/idMediaPickerButton"
+        />
+
+    <Button
+        android:id="@+id/idMediaPickerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cornerRadius = "15dp"
+        android:drawableTop="@drawable/ic_baseline_add_photo_alternate_24"
+        android:drawableTint="#6200EE"
+        android:text="@string/pick_media"
+        android:textAllCaps="false"
+        style="?android:attr/buttonBarButtonStyle"
+        app:layout_constraintStart_toEndOf="@id/idCoverImage"
+        app:layout_constraintTop_toBottomOf="@id/idCameraPickerButton"
+        />
+
+    <ImageButton
+        android:id="@+id/idUndoEdit"
+        style="@style/EditUndoButton"
+        android:layout_height="0dp"
+        android:contentDescription="@string/cancel"
+        app:layout_constraintDimensionRatio="1"
+
+        app:layout_constraintEnd_toEndOf="@id/idCoverImage"
+        app:layout_constraintTop_toTopOf="@id/idCoverImage"
+
+        app:tint="@color/editorValueUnchanged" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
